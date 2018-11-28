@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{9C38A5A1-CFBC-4475-BACE-9BFD5F093D86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Places", "Places", "{3566B969-C09E-4AD6-8B48-E2C61D09411A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduling", "Scheduling", "{7038C746-F8FE-41E5-BE3F-1C900676904C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Security", "Security\AlexandreApps.Meeting-Room.Security\AlexandreApps.Meeting-Room.Security.csproj", "{2FDC0ED9-0E6D-4840-826F-83BE140D2133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Scheduling", "Scheduling\AlexandreApps.Meeting-Room.Scheduling\AlexandreApps.Meeting-Room.Scheduling.csproj", "{D2F888F4-8DA0-4A4D-B5E7-F3DC340F7370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Places", "Places\AlexandreApps.Meeting-Room.Places\AlexandreApps.Meeting-Room.Places.csproj", "{30F3E5F2-2FF6-480D-A1B5-A11A92716D6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FFF89C95-2592-450B-9482-43A079A8C358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Core.Models", "Core\AlexandreApps.Meeting-Room.Core.Models\AlexandreApps.Meeting-Room.Core.Models.csproj", "{FAA778F6-C32C-42F6-A100-C8A32B396A0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FDC0ED9-0E6D-4840-826F-83BE140D2133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDC0ED9-0E6D-4840-826F-83BE140D2133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDC0ED9-0E6D-4840-826F-83BE140D2133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDC0ED9-0E6D-4840-826F-83BE140D2133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F888F4-8DA0-4A4D-B5E7-F3DC340F7370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F888F4-8DA0-4A4D-B5E7-F3DC340F7370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F888F4-8DA0-4A4D-B5E7-F3DC340F7370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F888F4-8DA0-4A4D-B5E7-F3DC340F7370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F3E5F2-2FF6-480D-A1B5-A11A92716D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F3E5F2-2FF6-480D-A1B5-A11A92716D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F3E5F2-2FF6-480D-A1B5-A11A92716D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F3E5F2-2FF6-480D-A1B5-A11A92716D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAA778F6-C32C-42F6-A100-C8A32B396A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA778F6-C32C-42F6-A100-C8A32B396A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA778F6-C32C-42F6-A100-C8A32B396A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA778F6-C32C-42F6-A100-C8A32B396A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2FDC0ED9-0E6D-4840-826F-83BE140D2133} = {9C38A5A1-CFBC-4475-BACE-9BFD5F093D86}
+		{D2F888F4-8DA0-4A4D-B5E7-F3DC340F7370} = {7038C746-F8FE-41E5-BE3F-1C900676904C}
+		{30F3E5F2-2FF6-480D-A1B5-A11A92716D6A} = {3566B969-C09E-4AD6-8B48-E2C61D09411A}
+		{FAA778F6-C32C-42F6-A100-C8A32B396A0F} = {FFF89C95-2592-450B-9482-43A079A8C358}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89DA2A79-12D2-46C1-9DF4-528534A8A3D5}
+	EndGlobalSection
+EndGlobal
