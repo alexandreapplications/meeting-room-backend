@@ -7,7 +7,7 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Scheduling
     /// <summary>
     /// Represents a scheduling for a place
     /// </summary>
-    public class PlaceSchedulingModel
+    public class SchedulingModel
     {
         /// <summary>
         /// Identification
@@ -38,8 +38,17 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Scheduling
         /// Final date
         /// </summary>
         public DateTime FinalDateDate { get; set; }
+        /// <summary>
+        /// Cancelation information
+        /// </summary>
         public string CancelationInformation { get; set; }
+        /// <summary>
+        /// User that canceled the meeting
+        /// </summary>
         public int CancelationUser { get; set; }
+        /// <summary>
+        /// Cancelation date
+        /// </summary>
         public DateTime? CancelationDate { get; set; }
     }
 }

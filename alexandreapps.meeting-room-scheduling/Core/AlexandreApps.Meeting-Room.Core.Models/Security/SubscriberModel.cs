@@ -20,6 +20,10 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
         /// </summary>
         public string Name { get; set; }
         /// <summary>
+        /// Subscriber Email
+        /// </summary>
+        public string Email { get; set; }
+        /// <summary>
         /// Subscriber Remarks
         /// </summary>
         public string Remarks { get; set; }

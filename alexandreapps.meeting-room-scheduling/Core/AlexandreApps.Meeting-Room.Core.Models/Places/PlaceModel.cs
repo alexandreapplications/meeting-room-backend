@@ -47,9 +47,5 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Places
         /// </summary>
         /// <example>Coffe, cutelary, ...</example>
         public string[] OptionalInfrastructure { get; set; }
-        /// <summary>
-        /// Times the place can be scheduled
-        /// </summary>
-        public PlaceAvailabilityModel[] PlaceAvailabilities { get; set; }
     }
 }

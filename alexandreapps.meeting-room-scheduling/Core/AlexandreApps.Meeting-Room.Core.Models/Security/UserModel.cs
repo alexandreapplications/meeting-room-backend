@@ -30,8 +30,8 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
         /// </summary>
         public string[] Telephones { get; set; }
         /// <summary>
-        /// User password
+        /// User password history
         /// </summary>
-        public byte[] Password { get; set; }
+        public UserPasswordHistory[] PasswordHistory { get; set; }
     }
 }
