@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AlexandreApps.Meeting-Room.Core.Models\AlexandreApps.Meeting-Room.Core.Models.csproj" />
+    <ProjectReference Include="..\AlexandreApps.Meeting-Room.Scheduling.Interfaces\AlexandreApps.Meeting-Room.Scheduling.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

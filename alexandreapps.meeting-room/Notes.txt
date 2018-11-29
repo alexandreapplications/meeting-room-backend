@@ -1,0 +1,5 @@
+install-package Microsoft.Extensions.Configuration
+install-package Microsoft.Extensions.DependencyInjection
+
+
+install-package MongoDB.Driver

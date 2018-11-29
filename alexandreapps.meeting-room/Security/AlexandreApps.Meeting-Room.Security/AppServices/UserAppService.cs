@@ -1,5 +1,5 @@
 ﻿using AlexandreApps.Meeting_Room.Core.Models.Security;
-using AlexandreApps.Meeting_Room.Security.Interface;
+using AlexandreApps.Meeting_Room.Security.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

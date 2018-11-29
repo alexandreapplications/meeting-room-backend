@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>AlexandreApps.Meeting_Room.Security.Interfaces</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AlexandreApps.Meeting-Room.Core.Models\AlexandreApps.Meeting-Room.Core.Models.csproj" />
+  </ItemGroup>
+
+</Project>

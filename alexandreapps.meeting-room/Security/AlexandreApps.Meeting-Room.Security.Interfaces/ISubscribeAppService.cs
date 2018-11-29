@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlexandreApps.Meeting_Room.Security.Interface
+namespace AlexandreApps.Meeting_Room.Security.Interfaces
 {
     public interface ISubscribeAppService
     {

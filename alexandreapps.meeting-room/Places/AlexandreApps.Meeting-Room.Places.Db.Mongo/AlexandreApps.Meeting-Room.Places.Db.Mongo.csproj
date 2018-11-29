@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>AlexandreApps.Meeting_Room.Places.Db.Mongo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DbServices\" />
+    <Folder Include="Dependences\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
+  </ItemGroup>
+
+</Project>

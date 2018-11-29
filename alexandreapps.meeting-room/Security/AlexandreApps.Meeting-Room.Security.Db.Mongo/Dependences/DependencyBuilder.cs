@@ -1,12 +1,10 @@
-﻿using AlexandreApps.Meeting_Room.Security.AppServices;
-using AlexandreApps.Meeting_Room.Security.Interfaces;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AlexandreApps.Meeting_Room.Security.Dependences
+namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.Dependences
 {
     /// <summary>
     /// Builds the dependency for this project
@@ -22,8 +20,8 @@ namespace AlexandreApps.Meeting_Room.Security.Dependences
         {
             services = services ?? throw new ArgumentNullException(nameof(services));
 
-            services.AddSingleton<ISubscribeAppService, SubscribeAppService>();
-            services.AddSingleton<IUserAppService, UserAppService>();
+            // services.AddSingleton<ISubscribeAppService, SubscribeAppService>();
+            // services.AddSingleton<IUserAppService, UserAppService>();
         }
     }
 }
