@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AlexandreApps.Meeting-Room.Core.Models\AlexandreApps.Meeting-Room.Core.Models.csproj" />
+    <ProjectReference Include="..\..\Core\AlexandreApps.Meeting-Room.Core.Utils\AlexandreApps.Meeting-Room.Core.Utils.csproj" />
     <ProjectReference Include="..\AlexandreApps.Meeting-Room.Security.Interfaces\AlexandreApps.Meeting-Room.Security.Interfaces.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,7 @@
 install-package Microsoft.Extensions.Configuration
 install-package Microsoft.Extensions.DependencyInjection
 
-
+install-package Microsoft.Extensions.Configuration.Binder
 install-package MongoDB.Driver
+
+install-package Swashbuckle.AspNetCore

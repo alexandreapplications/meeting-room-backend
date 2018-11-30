@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices;
+using AlexandreApps.Meeting_Room.Security.Db.Mongo.Settings;
+using AlexandreApps.Meeting_Room.Security.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -20,8 +23,14 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.Dependences
         {
             services = services ?? throw new ArgumentNullException(nameof(services));
 
-            // services.AddSingleton<ISubscribeAppService, SubscribeAppService>();
-            // services.AddSingleton<IUserAppService, UserAppService>();
+            services.AddSingleton<ISubscribeDbService, SubscribeDbService>();
+            services.AddSingleton<IUserDbService, UserDbService>();
+            SettingsModel appSettings = new SettingsModel();
+
+            configuration.GetSection("AppSettings").GetSection("MongoDB").Bind(appSettings);
+
+            services.AddSingleton<ISettingsModel, SettingsModel>(x => appSettings);
+
         }
     }
 }

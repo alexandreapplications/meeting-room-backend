@@ -7,9 +7,9 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
     public class UserPasswordHistory
     {
         /// <summary>
-        /// User Id
+        /// UniqueId
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// Password date
         /// </summary>

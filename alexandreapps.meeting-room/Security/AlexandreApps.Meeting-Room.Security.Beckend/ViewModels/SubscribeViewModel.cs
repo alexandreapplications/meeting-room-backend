@@ -1,38 +1,39 @@
 ﻿using AlexandreApps.Meeting_Room.Core.Models.Common;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace AlexandreApps.Meeting_Room.Core.Models.Security
+namespace AlexandreApps.Meeting_Room.Security.Beckend.ViewModels
 {
     /// <summary>
-    /// Application User
+    /// Viewmodel user informs what he need for subscription
     /// </summary>
-    public class UserModel
+    public class SubscribeViewModel
     {
         /// <summary>
-        /// Id
+        /// Subscriber Code
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// User code
+        /// Subscriber Code
         /// </summary>
+        [Required, MinLength(5)]
         public string Code { get; set; }
         /// <summary>
-        /// User Name
+        /// Subscriber Name
         /// </summary>
+        [Required, MinLength(15)]
         public string Name { get; set; }
         /// <summary>
-        /// User Email
+        /// Subscriber Email
         /// </summary>
         public List<EmailModel> Emails { get; set; }
         /// <summary>
-        /// User Telephone
+        /// Subscriber Remarks
         /// </summary>
-        public List<PhoneModel> Telephones { get; set; }
-        /// <summary>
-        /// User password history
-        /// </summary>
-        public List<UserPasswordHistory> PasswordHistory { get; set; }
+        [MinLength(5)]
+        public string Remarks { get; set; }
     }
 }

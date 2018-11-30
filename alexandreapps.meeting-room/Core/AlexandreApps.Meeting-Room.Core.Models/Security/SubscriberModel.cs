@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AlexandreApps.Meeting_Room.Core.Models.Common;
+using System;
+using System.Collections.Generic;
 
 namespace AlexandreApps.Meeting_Room.Core.Models.Security
 {
@@ -8,9 +10,9 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
     public class SubscriberModel
     {
         /// <summary>
-        /// Subscriber Id
+        /// UniqueId
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// Subscriber Code
         /// </summary>
@@ -22,7 +24,11 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
         /// <summary>
         /// Subscriber Email
         /// </summary>
-        public string Email { get; set; }
+        public List<EmailModel> Emails { get; set; }
+        /// <summary>
+        /// Subscriber Telephones
+        /// </summary>
+        public List<PhoneModel> Telephones { get; set; }
         /// <summary>
         /// Subscriber Remarks
         /// </summary>
@@ -30,6 +36,6 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
         /// <summary>
         /// Subscriber Administrator
         /// </summary>
-        public UserModel[] Administrators { get; set; }
+        public List<UserModel> Administrators { get; set; }
     }
 }

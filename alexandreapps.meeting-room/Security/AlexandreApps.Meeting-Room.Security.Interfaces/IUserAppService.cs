@@ -13,8 +13,17 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// </summary>
         /// <param name="userModels">User models</param>
         /// <returns>Information of the created users</returns>
-        Task<UserModel[]> Create(UserModel[] userModels);
+        Task<UserModel[]> Create(params UserModel[] userModels);
 
+        /// <summary>
+        /// Changes user password
+        /// </summary>
+        /// <param name="userId">User Id</param>
+        /// <param name="currentPassword">CurrentPassword</param>
+        /// <param name="newPassword">Newpassword</param>
+        /// <param name="remarks">List of erros</param>
+        /// <returns>If the operation succeded</returns>
+        Task<bool> ChangePassword(Guid userId, string currentPassword, string newPassword, Dictionary<string, string> remarks);
         /// <summary>
         /// Updates one or more users
         /// </summary>

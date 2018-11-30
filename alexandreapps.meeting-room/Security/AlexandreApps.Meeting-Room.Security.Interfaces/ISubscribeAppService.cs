@@ -13,7 +13,7 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// </summary>
         /// <param name="model">Subscribition Information</param>
         /// <returns>If was possible or error</returns>
-        Task<SubscriberModel> Create(SubscriberModel subscriber, UserModel user);
+        Task<SubscriberModel> Create(SubscriberModel model);
         /// <summary>
         /// Updates the subscriber info
         /// </summary>
