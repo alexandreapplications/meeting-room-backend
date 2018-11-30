@@ -99,20 +99,35 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
         /// <summary>
         /// Gets a specific user
         /// </summary>
-        /// <param name="key">User Key</param>
+        /// <param name="id">User Id</param>
         /// <returns>Get User</returns>
-        public async Task<UserModel> GetUser(int key)
+        public async Task<UserModel> GetUser(Guid id)
         {
-            throw new NotImplementedException();
+            return await _UserDb.GetSingle(id);
         }
         /// <summary>
         /// Gets all the user of one subscriber
         /// </summary>
-        /// <param name="key">Subscriber key</param>
+        /// <param name="id">Subscriber Id</param>
         /// <returns>User information</returns>
-        public async Task<UserModel> GetUserBySubscriber(int key)
+        public async Task<UserModel> GetUserBySubscriber(Guid id)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Verify if user or a list of users do exists
+        /// </summary>
+        /// <param name="userIds">List of ids</param>
+        /// <returns>If exists</returns>
+        public bool VerifyUserExistance(params Guid[] userIds)
+        {
+            if (userIds == null || userIds.Length == 0)
+                return true;
+            Task<UserModel>[] userModels = userIds.Select(guid =>
+                    this.GetUser(guid)).ToArray();
+            Task.WaitAll(userModels);
+            return (userModels.Count(x => x.Result == null) == 0);
         }
     }
 }

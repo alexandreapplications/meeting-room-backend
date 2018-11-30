@@ -48,7 +48,14 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices
         {
             var collection = _SettingsModel.GetCollection<UserModel>(collectionName);
 
-            return await collection.Find(new FilterDefinitionBuilder<UserModel>().Empty).FirstOrDefaultAsync();
+            return await collection.Find(GetFilterUniqueId(id)).FirstOrDefaultAsync();
+        }
+
+        public async Task<IList<UserModel>> GetAll()
+        {
+            var collection = _SettingsModel.GetCollection<UserModel>(collectionName);
+
+            return await collection.AsQueryable().ToListAsync();
         }
 
         private FilterDefinition<UserModel> GetFilterUniqueId(Guid uniqueId)

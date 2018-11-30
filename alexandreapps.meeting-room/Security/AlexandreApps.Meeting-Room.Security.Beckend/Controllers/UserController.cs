@@ -96,5 +96,39 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
                 return new BadRequestObjectResult(ex);
             }
         }
+
+        public async Task<IActionResult> Login([FromBody] LoginViewModel login)
+        {
+            throw new NotImplementedException();
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
+
+            //try
+            //{
+            //    Dictionary<string, string> remarks;
+
+            //    string autenticationTicket;
+
+            //    if (await _AppService.LogIn(login.UserId, login.Password, out remarks, out autenticationTicket))
+            //    {
+            //        return Accepted($"api/[controller]/{ record.autenticationTicket }");
+            //    }
+            //    foreach (var item in remarks)
+            //    {
+            //        ModelState.AddModelError(item.Key, item.Value);
+            //    }
+            //    return BadRequest(ModelState);
+            //}
+            //catch (ApplicationException ex)
+            //{
+            //    return new BadRequestObjectResult(ex);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return new BadRequestObjectResult(ex);
+            //}
+        }
     }
 }

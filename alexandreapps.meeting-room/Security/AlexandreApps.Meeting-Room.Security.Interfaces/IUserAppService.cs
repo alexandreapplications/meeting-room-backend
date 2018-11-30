@@ -40,14 +40,20 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// <summary>
         /// Gets a specific user
         /// </summary>
-        /// <param name="key">User Key</param>
+        /// <param name="id">User Id</param>
         /// <returns>Get User</returns>
-        Task<UserModel> GetUser(int key);
+        Task<UserModel> GetUser(Guid id);
         /// <summary>
         /// Gets all the user of one subscriber
         /// </summary>
-        /// <param name="key">Subscriber key</param>
+        /// <param name="id">Subscriber Id</param>
         /// <returns>User information</returns>
-        Task<UserModel> GetUserBySubscriber(int key);
+        Task<UserModel> GetUserBySubscriber(Guid id);
+        /// <summary>
+        /// Verify if user or a list of users do exists
+        /// </summary>
+        /// <param name="userIds">List of ids</param>
+        /// <returns>If exists</returns>
+        bool VerifyUserExistance(params Guid[] userIds);
     }
 }

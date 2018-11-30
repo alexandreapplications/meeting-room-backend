@@ -14,10 +14,12 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
     public class SubscribeAppService: ISubscribeAppService
     {
         private readonly ISubscribeDbService _SubscribeDb;
+        private readonly IUserAppService _userAppService;
 
-        public SubscribeAppService(ISubscribeDbService subscribeDb)
+        public SubscribeAppService(ISubscribeDbService subscribeDb, IUserAppService userAppService)
         {
             _SubscribeDb = subscribeDb;
+            _userAppService = userAppService;
         }
         /// <summary>
         /// Allow the user to subscribe
@@ -29,6 +31,12 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
         {
             subscriber.Id = Guid.NewGuid();
             subscriber.Emails.ForEach(x => x.Id = Guid.NewGuid());
+            #region Verify if administrators exists
+            if (subscriber.Administrators != null && subscriber.Administrators.Count() > 0 && !_userAppService.VerifyUserExistance(subscriber.Administrators.ToArray()))
+            {
+                throw new ApplicationException("One or more administrator don't exist. Operation cancelled.");
+            }
+            #endregion
             return await _SubscribeDb.Create(subscriber);
         }
 
