@@ -38,7 +38,6 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
                 Code = record.Code,
                 Name = record.Name,
                 Emails = record.Emails,
-                Administrators = record.Administrators,
                 Remarks = record.Remarks
             };
 

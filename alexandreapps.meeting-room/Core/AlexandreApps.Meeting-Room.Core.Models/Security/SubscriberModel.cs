@@ -33,9 +33,5 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Security
         /// Subscriber Remarks
         /// </summary>
         public string Remarks { get; set; }
-        /// <summary>
-        /// Subscriber Administrator
-        /// </summary>
-        public List<Guid> Administrators { get; set; }
     }
 }

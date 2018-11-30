@@ -29,7 +29,7 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// </summary>
         /// <param name="userModels">User models</param>
         /// <returns>Information of the created users</returns>
-        Task<UserModel[]> Update(UserModel[] userModels);
+        Task<UserModel[]> Update(params UserModel[] userModels);
 
         /// <summary>
         /// Delete

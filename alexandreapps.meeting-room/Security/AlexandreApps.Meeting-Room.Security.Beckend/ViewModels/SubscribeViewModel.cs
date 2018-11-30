@@ -35,9 +35,5 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.ViewModels
         /// </summary>
         [MinLength(5)]
         public string Remarks { get; set; }
-        /// <summary>
-        /// Subscriber administrators
-        /// </summary>
-        public List<Guid> Administrators { get; set; }
     }
 }

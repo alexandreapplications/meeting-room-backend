@@ -17,20 +17,20 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.ViewModels
         /// User code
         /// </summary>
         [Required, MinLength(5)]
-        public string UserCode { get; set; }
+        public string Code { get; set; }
         /// <summary>
         /// User Name
         /// </summary>
         [Required, MinLength(15)]
-        public string UserName { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// User Email
         /// </summary>
         [Required]
-        public List<EmailModel> UserEmails { get; set; }
+        public List<EmailModel> Emails { get; set; }
         /// <summary>
         /// User Telephone
         /// </summary>
-        public List<PhoneModel> UserTelephones { get; set; }
+        public List<PhoneModel> Telephones { get; set; }
     }
 }

@@ -82,9 +82,13 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
         /// </summary>
         /// <param name="userModels">User models</param>
         /// <returns>Information of the created users</returns>
-        public async Task<UserModel[]> Update(UserModel[] userModels)
+        public async Task<UserModel[]> Update(params UserModel[] userModels)
         {
-            throw new NotImplementedException();
+            Task<bool>[] tasks = userModels.Select(x => _UserDb.Update(x)).ToArray();
+
+            var file = await Task.WhenAll<bool>(tasks);
+
+            return userModels;
         }
 
         /// <summary>

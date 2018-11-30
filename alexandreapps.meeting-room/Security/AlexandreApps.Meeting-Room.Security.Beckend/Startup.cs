@@ -32,6 +32,15 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend
         {
             services.AddSwaggerGen(c => c.SwaggerDoc(ApplicationVersion, new Info { Title = ApplicationName, Version = ApplicationVersion }));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             Dependences.DependencyBuilder.Build(services, Configuration);
@@ -50,6 +59,9 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("CorsPolicy");
+
             app.UseMvc();
 
             app.UseSwagger();

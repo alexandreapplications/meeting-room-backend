@@ -24,6 +24,7 @@ namespace AlexandreApps.Meeting_Room.Security.Dependences
 
             services.AddSingleton<ISubscribeAppService, SubscribeAppService>();
             services.AddSingleton<IUserAppService, UserAppService>();
+            services.AddSingleton<IUserSubscriptionAppService, UserSubscriptionAppService>();
         }
     }
 }

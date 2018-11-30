@@ -25,6 +25,7 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.Dependences
 
             services.AddSingleton<ISubscribeDbService, SubscribeDbService>();
             services.AddSingleton<IUserDbService, UserDbService>();
+            services.AddSingleton<IUserSubscriptionDbService, UserSubscriptionDbService>();
             SettingsModel appSettings = new SettingsModel();
 
             configuration.GetSection("AppSettings").GetSection("MongoDB").Bind(appSettings);

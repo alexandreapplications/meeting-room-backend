@@ -32,19 +32,64 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
                 return BadRequest(ModelState);
             }
 
-            UserModel userModel = new UserModel
+            try
             {
-                Code = record.UserCode,
-                Name = record.UserName,
-                Emails = record.UserEmails,
-                Telephones = record.UserTelephones
-            };
+                var createdRecord = ModelToView((await _AppService.Create(ViewToModel(record))).First());
+
+                return Created($"api/[controller]/{ createdRecord.Id }", createdRecord);
+            }
+            catch (ApplicationException ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+        }
+
+        /// <summary>
+        /// Updates a record
+        /// </summary>
+        /// <param name="record">Record</param>
+        /// <returns>Updated record</returns>
+        [HttpPut("Update")]
+        public async Task<IActionResult> Update([FromBody] UserViewModel record)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
             try
             {
-                var createdRecord = (await _AppService.Create(userModel)).First();
+                var updatedRecord = ModelToView((await _AppService.Update(ViewToModel(record))).First());
 
-                return Created($"api/[controller]/{ createdRecord.Id }", createdRecord);
+                return Accepted($"api/[controller]/{ record.Id }", updatedRecord);
+            }
+            catch (ApplicationException ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+        }
+
+        /// <summary>
+        /// Updates a record
+        /// </summary>
+        /// <param name="record">Record</param>
+        /// <returns>Updated record</returns>
+        [HttpPut("Get/:id")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            try
+            {
+                var record = (await _AppService.GetUser(id));
+
+                return new OkObjectResult(record);
             }
             catch (ApplicationException ex)
             {
@@ -97,38 +142,66 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
             }
         }
 
-        public async Task<IActionResult> Login([FromBody] LoginViewModel login)
+        //public async Task<IActionResult> Login([FromBody] LoginViewModel login)
+        //{
+        //    throw new NotImplementedException();
+        //    //if (!ModelState.IsValid)
+        //    //{
+        //    //    return BadRequest(ModelState);
+        //    //}
+
+        //    //try
+        //    //{
+        //    //    Dictionary<string, string> remarks;
+
+        //    //    string autenticationTicket;
+
+        //    //    if (await _AppService.LogIn(login.UserId, login.Password, out remarks, out autenticationTicket))
+        //    //    {
+        //    //        return Accepted($"api/[controller]/{ record.autenticationTicket }");
+        //    //    }
+        //    //    foreach (var item in remarks)
+        //    //    {
+        //    //        ModelState.AddModelError(item.Key, item.Value);
+        //    //    }
+        //    //    return BadRequest(ModelState);
+        //    //}
+        //    //catch (ApplicationException ex)
+        //    //{
+        //    //    return new BadRequestObjectResult(ex);
+        //    //}
+        //    //catch (Exception ex)
+        //    //{
+        //    //    return new BadRequestObjectResult(ex);
+        //    //}
+        //}
+
+        private UserViewModel ModelToView (UserModel model)
         {
-            throw new NotImplementedException();
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
+            if (model is null)
+                return null;
+            return new UserViewModel
+            {
+                Id = model.Id,
+                Code = model.Code,
+                Name = model.Name,
+                Emails = model.Emails,
+                Telephones = model.Telephones
+            };
+        }
 
-            //try
-            //{
-            //    Dictionary<string, string> remarks;
-
-            //    string autenticationTicket;
-
-            //    if (await _AppService.LogIn(login.UserId, login.Password, out remarks, out autenticationTicket))
-            //    {
-            //        return Accepted($"api/[controller]/{ record.autenticationTicket }");
-            //    }
-            //    foreach (var item in remarks)
-            //    {
-            //        ModelState.AddModelError(item.Key, item.Value);
-            //    }
-            //    return BadRequest(ModelState);
-            //}
-            //catch (ApplicationException ex)
-            //{
-            //    return new BadRequestObjectResult(ex);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new BadRequestObjectResult(ex);
-            //}
+        private UserModel ViewToModel(UserViewModel model)
+        {
+            if (model is null)
+                return null;
+            return new UserModel
+            {
+                Id = model.Id,
+                Code = model.Code,
+                Name = model.Name,
+                Emails = model.Emails,
+                Telephones = model.Telephones
+            };
         }
     }
 }
