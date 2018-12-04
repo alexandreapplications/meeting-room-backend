@@ -49,9 +49,18 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
         /// </summary>
         /// <param name="id">Subscriber id</param>
         /// <returns>Subscriber information</returns>
-        public async Task<SubscriberModel> Get(string id)
+        public Task<SubscriberModel> GetSingle(Guid id)
         {
-            throw new NotImplementedException();
+            return _SubscribeDb.GetSingle(id);
+        }
+        /// <summary>
+        /// Get a subscriber by code
+        /// </summary>
+        /// <param name="id">Id</param>
+        /// <returns>Found record or null</returns>
+        public Task<SubscriberModel> GetByCode(string id)
+        {
+            return _SubscribeDb.GetByCode(id);
         }
     }
 }

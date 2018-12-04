@@ -15,10 +15,10 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
     [ApiController]
     public class SubscriptionController : ControllerBase
     {
-        private readonly ISubscribeAppService appService;
+        private readonly ISubscribeAppService _AppService;
         public SubscriptionController(ISubscribeAppService subscribeAppService)
         {
-            this.appService = subscribeAppService;
+            this._AppService = subscribeAppService;
         }
         /// <summary>
         /// Inserts a new record
@@ -43,7 +43,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
 
             try
             {
-                var createdRecord = (await this.appService.Create(subscriberModel));
+                var createdRecord = (await this._AppService.Create(subscriberModel));
 
                 return Created($"api/[controller]/{ createdRecord.Id }", createdRecord);
             }
@@ -52,6 +52,25 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
                 return new BadRequestObjectResult(ex);
             }
 
+        }
+
+        [HttpGet("getbycode/{id}")]
+        public async Task<IActionResult> GetByCode(string id)
+        {
+            try
+            {
+                var record = (await _AppService.GetByCode(id));
+
+                return new OkObjectResult(record);
+            }
+            catch (ApplicationException ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
         }
     }
 }

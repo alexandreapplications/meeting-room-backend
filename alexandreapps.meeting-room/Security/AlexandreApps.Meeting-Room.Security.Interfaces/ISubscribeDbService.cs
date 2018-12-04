@@ -17,5 +17,17 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// <param name="model">Suscription data</param>
         /// <returns>Updated record</returns>
         Task<SubscriberModel> Create(SubscriberModel model);
+        /// <summary>
+        /// Get a subscriber by code
+        /// </summary>
+        /// <param name="id">Id</param>
+        /// <returns>Found record or null</returns>
+        Task<SubscriberModel> GetByCode(string id);
+        /// <summary>
+        /// Get a subscriber by id
+        /// </summary>
+        /// <param name="id">Id</param>
+        /// <returns>Found record or null</returns>
+        Task<SubscriberModel> GetSingle(Guid id);
     }
 }
