@@ -58,7 +58,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseCors("CorsPolicy");
 

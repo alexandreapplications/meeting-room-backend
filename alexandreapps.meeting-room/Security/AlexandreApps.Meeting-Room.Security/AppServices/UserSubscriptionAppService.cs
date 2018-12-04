@@ -32,6 +32,12 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
         /// <returns>Updated record</returns>
         public Task<UserSubscriptionModel> Create(UserSubscriptionModel model)
         {
+            model.Id = Guid.NewGuid();
+            model.CreationDate = DateTime.Now;
+            if (model.DeletionDate.HasValue)
+            {
+                model.DeletionDate = model.CreationDate;
+            }
             return _DbService.Create(model);
         }
 
@@ -39,10 +45,15 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
         /// Updates a record
         /// </summary>
         /// <param name="model">Record model</param>
-        /// <returns>If operation has succeded</returns>
-        public Task<bool> Update(UserSubscriptionModel model)
+        /// <returns>Record model</returns>
+        public async Task<UserSubscriptionModel> Update(UserSubscriptionModel model)
         {
-            return _DbService.Update(model);
+            var currentRecord = await _DbService.GetSingle(model.Id);
+            if (currentRecord.CreationDate != model.CreationDate)
+            {
+                model.CreationDate = currentRecord.CreationDate;
+            }
+            return await _DbService.Update(model);
         }
 
         /// <summary>

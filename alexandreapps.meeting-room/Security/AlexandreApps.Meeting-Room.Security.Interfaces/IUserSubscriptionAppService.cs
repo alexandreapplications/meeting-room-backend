@@ -19,8 +19,8 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// Updates a record
         /// </summary>
         /// <param name="model">Record model</param>
-        /// <returns>If operation has succeded</returns>
-        Task<bool> Update(UserSubscriptionModel model);
+        /// <returns>Record model</returns>
+        Task<UserSubscriptionModel> Update(UserSubscriptionModel model);
 
         /// <summary>
         /// Gets a single record by Id

@@ -44,13 +44,13 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices
         /// </summary>
         /// <param name="model">Record model</param>
         /// <returns>If operation has succeded</returns>
-        public async Task<bool> Update(UserSubscriptionModel model)
+        public async Task<UserSubscriptionModel> Update(UserSubscriptionModel model)
         {
             var collection = _SettingsModel.GetCollection<UserSubscriptionModel>(collectionName);
 
-            await collection.ReplaceOneAsync(GetFilterId(model.Id), model);
+            var result = await collection.ReplaceOneAsync(GetFilterId(model.Id), model);
 
-            return true;
+            return result.ModifiedCount > 0 ? model : null;
         }
 
         /// <summary>

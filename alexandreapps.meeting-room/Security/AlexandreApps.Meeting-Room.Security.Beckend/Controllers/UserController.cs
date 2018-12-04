@@ -24,7 +24,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPut("Create")]
+        [HttpPut("create")]
         public async Task<IActionResult> Create([FromBody] UserViewModel record)
         {
             if (!ModelState.IsValid)
@@ -53,7 +53,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Updated record</returns>
-        [HttpPut("Update")]
+        [HttpPost("update")]
         public async Task<IActionResult> Update([FromBody] UserViewModel record)
         {
             if (!ModelState.IsValid)
@@ -82,7 +82,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Updated record</returns>
-        [HttpPut("Get/:id")]
+        [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
             try
