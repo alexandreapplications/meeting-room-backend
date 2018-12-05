@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>AlexandreApps.Meeting_Room.Places.Backend</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlexandreApps.Meeting-Room.Places.Db.Mongo\AlexandreApps.Meeting-Room.Places.Db.Mongo.csproj" />
+    <ProjectReference Include="..\AlexandreApps.Meeting-Room.Places\AlexandreApps.Meeting-Room.Places.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Command\" />
+  </ItemGroup>
+
+</Project>

@@ -2,7 +2,7 @@
 using AlexandreApps.Meeting_Room.Places.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AlexandreApps.Meeting_Room.Places.AppServices
@@ -12,14 +12,28 @@ namespace AlexandreApps.Meeting_Room.Places.AppServices
     /// </summary>
     public class PlaceGroupAppService: IPlaceGroupAppService
     {
+        private readonly IPlaceGroupDbService _PlaceGroupDb;
+
+        public PlaceGroupAppService(IPlaceGroupDbService placeGroupDb)
+        {
+            this._PlaceGroupDb = placeGroupDb;
+        }
+
         /// <summary>
         /// Creates a new Place groups
         /// </summary>
         /// <param name="models">Places to create</param>
         /// <returns>Places information</returns>
-        public async Task<PlaceGroupModel[]> Create (PlaceGroupModel[] models)
+        public async Task<PlaceGroupModel[]> Create (params PlaceGroupModel[] models)
         {
-            throw new NotImplementedException();
+            foreach(var item in models)
+            {
+                item.Id = Guid.NewGuid();
+            }
+
+            await _PlaceGroupDb.Create(models);
+
+            return models;
         }
 
         /// <summary>
@@ -27,9 +41,9 @@ namespace AlexandreApps.Meeting_Room.Places.AppServices
         /// </summary>
         /// <param name="models">Places to Update</param>
         /// <returns>Places information</returns>
-        public async Task<PlaceGroupModel[]> Update(PlaceGroupModel[] models)
+        public async Task<PlaceGroupModel[]> Update(params PlaceGroupModel[] models)
         {
-            throw new NotImplementedException();
+            return await _PlaceGroupDb.Update(models);
         }
 
         /// <summary>
@@ -37,9 +51,9 @@ namespace AlexandreApps.Meeting_Room.Places.AppServices
         /// </summary>
         /// <param name="models">Ids to delete</param>
         /// <returns>Places information</returns>
-        public async Task<PlaceGroupModel[]> Delete(int[] ids)
+        public async Task<long> Delete(params Guid[] ids)
         {
-            throw new NotImplementedException();
+            return await _PlaceGroupDb.Delete(ids);
         }
 
         /// <summary>
@@ -47,9 +61,9 @@ namespace AlexandreApps.Meeting_Room.Places.AppServices
         /// </summary>
         /// <param name="id">Places to get</param>
         /// <returns>Places information</returns>
-        public async Task<PlaceGroupModel> Get(int id)
+        public async Task<PlaceGroupModel> Get(Guid id)
         {
-            throw new NotImplementedException();
+            return await _PlaceGroupDb.Get(id);
         }
 
         /// <summary>
@@ -57,9 +71,9 @@ namespace AlexandreApps.Meeting_Room.Places.AppServices
         /// </summary>
         /// <param name="id">Subscriber id</param>
         /// <returns>Places information</returns>
-        public async Task<PlaceGroupModel[]> GetListBySubscriber(int id)
+        public async Task<List<PlaceGroupModel>> GetListBySubscriber(Guid id)
         {
-            throw new NotImplementedException();
+            return await _PlaceGroupDb.GetListBySubscriber(id);
         }
     }
 }

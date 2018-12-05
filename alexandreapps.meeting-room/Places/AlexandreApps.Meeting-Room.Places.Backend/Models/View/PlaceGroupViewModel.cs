@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace AlexandreApps.Meeting_Room.Core.Models.Places
+namespace AlexandreApps.Meeting_Room.Places.Backend.Models.View
 {
-    /// <summary>
-    /// Represents a group of places
-    /// </summary>
-    public class PlaceGroupModel
+    public class PlaceGroupViewModel
     {
         /// <summary>
         /// Place Group Identification

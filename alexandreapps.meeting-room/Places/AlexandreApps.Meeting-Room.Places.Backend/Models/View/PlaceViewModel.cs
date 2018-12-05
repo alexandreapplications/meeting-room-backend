@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace AlexandreApps.Meeting_Room.Core.Models.Places
+namespace AlexandreApps.Meeting_Room.Places.Backend.Models.View
 {
-    /// <summary>
-    /// Represents a place or room to be schedule
-    /// </summary>
-    public class PlaceModel
+    public class PlaceViewModel
     {
         /// <summary>
         /// Place identification
@@ -20,7 +18,7 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Places
         /// <summary>
         /// Group
         /// </summary>
-        public PlaceGroupModel Group { get; set; }
+        public PlaceGroupViewModel Group { get; set; }
         /// <summary>
         /// Code
         /// </summary>

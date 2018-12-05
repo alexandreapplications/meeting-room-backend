@@ -21,24 +21,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Places.Interfaces", "Places\AlexandreApps.Meeting-Room.Places.Interfaces\AlexandreApps.Meeting-Room.Places.Interfaces.csproj", "{03CFF38E-DDAD-461A-8EB5-EE4518954CED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Scheduling.Interfaces", "Scheduling\AlexandreApps.Meeting-Room.Scheduling.Interfaces\AlexandreApps.Meeting-Room.Scheduling.Interfaces.csproj", "{4C7A8622-E138-4CEC-8D54-1C184005FAA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Scheduling.Interfaces", "Scheduling\AlexandreApps.Meeting-Room.Scheduling.Interfaces\AlexandreApps.Meeting-Room.Scheduling.Interfaces.csproj", "{4C7A8622-E138-4CEC-8D54-1C184005FAA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Security.Interfaces", "Security\AlexandreApps.Meeting-Room.Security.Interfaces\AlexandreApps.Meeting-Room.Security.Interfaces.csproj", "{75CC2BED-4C11-4793-9FB1-F7CD50D18DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Security.Interfaces", "Security\AlexandreApps.Meeting-Room.Security.Interfaces\AlexandreApps.Meeting-Room.Security.Interfaces.csproj", "{75CC2BED-4C11-4793-9FB1-F7CD50D18DF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Security.Db.Mongo", "Security\AlexandreApps.Meeting-Room.Security.Db.Mongo\AlexandreApps.Meeting-Room.Security.Db.Mongo.csproj", "{20791A71-FDE8-4A7C-B25D-E383D8AB8AF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Security.Db.Mongo", "Security\AlexandreApps.Meeting-Room.Security.Db.Mongo\AlexandreApps.Meeting-Room.Security.Db.Mongo.csproj", "{20791A71-FDE8-4A7C-B25D-E383D8AB8AF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{525F4711-12AC-444D-94A3-8DED26431677}"
 	ProjectSection(SolutionItems) = preProject
 		Notes.txt = Notes.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Scheduling.Db.Mongo", "Scheduling\AlexandreApps.Meeting-Room.Scheduling.Db.Mongo\AlexandreApps.Meeting-Room.Scheduling.Db.Mongo.csproj", "{8B5C763C-B6BC-4852-9747-C43B1068EBC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Scheduling.Db.Mongo", "Scheduling\AlexandreApps.Meeting-Room.Scheduling.Db.Mongo\AlexandreApps.Meeting-Room.Scheduling.Db.Mongo.csproj", "{8B5C763C-B6BC-4852-9747-C43B1068EBC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Places.Db.Mongo", "Places\AlexandreApps.Meeting-Room.Places.Db.Mongo\AlexandreApps.Meeting-Room.Places.Db.Mongo.csproj", "{E606B6AD-963A-47B9-98C8-348B509328E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Places.Db.Mongo", "Places\AlexandreApps.Meeting-Room.Places.Db.Mongo\AlexandreApps.Meeting-Room.Places.Db.Mongo.csproj", "{E606B6AD-963A-47B9-98C8-348B509328E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Security.Beckend", "Security\AlexandreApps.Meeting-Room.Security.Beckend\AlexandreApps.Meeting-Room.Security.Beckend.csproj", "{F49A496A-4992-428F-A569-BE74D4EEFBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Security.Beckend", "Security\AlexandreApps.Meeting-Room.Security.Beckend\AlexandreApps.Meeting-Room.Security.Beckend.csproj", "{F49A496A-4992-428F-A569-BE74D4EEFBD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Core.Utils", "Core\AlexandreApps.Meeting-Room.Core.Utils\AlexandreApps.Meeting-Room.Core.Utils.csproj", "{3480D18A-CB22-4731-BA3D-F4025E5A6CD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Core.Utils", "Core\AlexandreApps.Meeting-Room.Core.Utils\AlexandreApps.Meeting-Room.Core.Utils.csproj", "{3480D18A-CB22-4731-BA3D-F4025E5A6CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Places.Backend", "Places\AlexandreApps.Meeting-Room.Places.Backend\AlexandreApps.Meeting-Room.Places.Backend.csproj", "{AE218067-66D9-47AB-9E8C-5027BD8735B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,6 +96,10 @@ Global
 		{3480D18A-CB22-4731-BA3D-F4025E5A6CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3480D18A-CB22-4731-BA3D-F4025E5A6CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3480D18A-CB22-4731-BA3D-F4025E5A6CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +117,7 @@ Global
 		{E606B6AD-963A-47B9-98C8-348B509328E1} = {3566B969-C09E-4AD6-8B48-E2C61D09411A}
 		{F49A496A-4992-428F-A569-BE74D4EEFBD0} = {9C38A5A1-CFBC-4475-BACE-9BFD5F093D86}
 		{3480D18A-CB22-4731-BA3D-F4025E5A6CD4} = {FFF89C95-2592-450B-9482-43A079A8C358}
+		{AE218067-66D9-47AB-9E8C-5027BD8735B1} = {3566B969-C09E-4AD6-8B48-E2C61D09411A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89DA2A79-12D2-46C1-9DF4-528534A8A3D5}

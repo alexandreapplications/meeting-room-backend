@@ -9,28 +9,28 @@ namespace AlexandreApps.Meeting_Room.Places.Interfaces
     /// <summary>
     /// Interface places
     /// </summary>
-    public interface IPlaceAppService
+    public interface IPlaceDbService
     {
         /// <summary>
         /// Creates a new Place groups
         /// </summary>
         /// <param name="models">Places to create</param>
         /// <returns>Places information</returns>
-        Task<PlaceModel[]> Create(params PlaceModel[] models);
+        Task Create(PlaceModel[] models);
 
         /// <summary>
         /// Updates a list of place groups
         /// </summary>
         /// <param name="models">Places to Update</param>
         /// <returns>Places information</returns>
-        Task<PlaceModel[]> Update(params PlaceModel[] models);
+        Task<PlaceModel[]> Update(PlaceModel[] models);
 
         /// <summary>
         /// Delete a list of place groups
         /// </summary>
         /// <param name="models">Ids to delete</param>
         /// <returns>Places information</returns>
-        Task<long> Delete(params Guid[] ids);
+        Task<long> Delete(Guid[] ids);
 
         /// <summary>
         /// Get a place group by key
