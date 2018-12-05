@@ -24,7 +24,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPut("create")]
+        [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] PlaceGroupViewModel record)
         {
             if (!ModelState.IsValid)

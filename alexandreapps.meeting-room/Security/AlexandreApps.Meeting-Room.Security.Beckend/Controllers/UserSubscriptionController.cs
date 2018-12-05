@@ -24,7 +24,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPut("create")]
+        [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] UserSubscriptionModel record)
         {
             if (!ModelState.IsValid)
@@ -53,7 +53,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPost("update")]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> Update([FromBody] UserSubscriptionModel record)
         {
             if (!ModelState.IsValid)

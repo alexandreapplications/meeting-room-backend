@@ -25,7 +25,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPut("Create")]
+        [HttpPost("Create")]
         public async Task<IActionResult> Create([FromBody] SubscribeViewModel record)
         {
             if (!ModelState.IsValid)
