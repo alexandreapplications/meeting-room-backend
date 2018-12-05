@@ -42,5 +42,13 @@ namespace AlexandreApps.Meeting_Room.Security.Interfaces
         /// <param name="id">Subscription id</param>
         /// <returns>List of subscriptions</returns>
         Task<IList<UserSubscriptionModel>> GetBySubscription(Guid id);
+        /// <summary>
+        /// Propagates the user information updates
+        /// </summary>
+        /// <param name="userId">User id</param>
+        /// <param name="code">User Code</param>
+        /// <param name="name">User Name</param>
+        /// <returns>Task to be run</returns>
+        long UpdateUserInformation(Guid userId, string code, string name);
     }
 }

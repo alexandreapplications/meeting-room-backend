@@ -34,8 +34,9 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend
 
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
+                options.AddPolicy("OpenPolicy",
+                    builder => builder
+                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials());
@@ -60,7 +61,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend
 
             //app.UseHttpsRedirection();
 
-            app.UseCors("CorsPolicy");
+            app.UseCors("OpenPolicy");
 
             app.UseMvc();
 

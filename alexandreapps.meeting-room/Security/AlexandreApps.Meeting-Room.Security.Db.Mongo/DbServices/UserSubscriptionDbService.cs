@@ -74,7 +74,7 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices
         {
             var collection = _SettingsModel.GetCollection<UserSubscriptionModel>(collectionName);
 
-            return await collection.AsQueryable().ToListAsync();
+            return await collection.Find(GetFilterByUser(id)).ToListAsync();
         }
 
         /// <summary>
@@ -86,8 +86,32 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices
         {
             var collection = _SettingsModel.GetCollection<UserSubscriptionModel>(collectionName);
 
-            return await collection.AsQueryable().ToListAsync();
+            return await collection.Find(GetFilterBySubscription(id)).ToListAsync();
         }
+        #region Other specific methods
+        /// <summary>
+        /// Propagates the user information updates
+        /// </summary>
+        /// <param name="userId">User id</param>
+        /// <param name="code">User Code</param>
+        /// <param name="name">User Name</param>
+        /// <returns>Task to be run</returns>
+        public long UpdateUserInformation(Guid userId, string code, string name)
+        {
+            var collection = _SettingsModel.GetCollection<UserSubscriptionModel>(collectionName);
+
+            var updateFilter = this.GetFilterByUser(userId);
+
+            var updateDefinitionBuilder = new UpdateDefinitionBuilder<UserSubscriptionModel>();
+
+            var updateDefinition = updateDefinitionBuilder.Set(x => x.UserCode, code)
+                .Set(x => x.UserName, name);
+
+            var result = collection.UpdateMany(updateFilter, updateDefinition);
+
+            return result.ModifiedCount;
+        }
+        #endregion
 
         #region Filter managenemnt
         /// <summary>
@@ -112,7 +136,8 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices
         /// <returns>Filter definition</returns>
         private FilterDefinition<UserSubscriptionModel> GetFilterBySubscription(Guid id)
         {
-            return _filterDefinitionBuilder.And(_filterDefinitionBuilder.Ne(x => x.DeletionDate.HasValue, false), _filterDefinitionBuilder.Eq(x => x.SubscriptionId, id));
+            return _filterDefinitionBuilder.Eq(x => x.SubscriptionId, id);
+            //return _filterDefinitionBuilder.And(_filterDefinitionBuilder.Ne(x => x.DeletionDate, null), _filterDefinitionBuilder.Eq(x => x.SubscriptionId, id));
         }
         /// <summary>
         /// Gets filter by user
@@ -121,7 +146,8 @@ namespace AlexandreApps.Meeting_Room.Security.Db.Mongo.DbServices
         /// <returns>Filter definition</returns>
         private FilterDefinition<UserSubscriptionModel> GetFilterByUser(Guid id)
         {
-            return _filterDefinitionBuilder.And(_filterDefinitionBuilder.Ne(x => x.DeletionDate.HasValue, false), _filterDefinitionBuilder.Eq(x => x.UserId, id));
+            return _filterDefinitionBuilder.Eq(x => x.UserId, id);
+            //return _filterDefinitionBuilder.And(_filterDefinitionBuilder.Ne(x => x.DeletionDate, null), _filterDefinitionBuilder.Eq(x => x.UserId, id));
         }
         #endregion
     }

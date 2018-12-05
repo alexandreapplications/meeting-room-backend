@@ -14,10 +14,12 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
     public class UserAppService : IUserAppService
     {
         private readonly IUserDbService _UserDb;
+        private readonly IUserSubscriptionDbService _SubscriptionDbService;
 
-        public UserAppService(IUserDbService userDb)
+        public UserAppService(IUserDbService userDb, IUserSubscriptionDbService subscriptionDbService)
         {
             this._UserDb = userDb;
+            this._SubscriptionDbService = subscriptionDbService;
         }
 
         /// <summary>
@@ -88,7 +90,21 @@ namespace AlexandreApps.Meeting_Room.Security.AppServices
 
             var file = await Task.WhenAll<bool>(tasks);
 
+            Task[] updateNameTask = userModels.Select(x => x.Id).Distinct().Select(x => UpdateUserName(x)).ToArray();
+
+            Task.WaitAll(tasks);
+
             return userModels;
+        }
+
+        private async Task<long> UpdateUserName(Guid userId)
+        {
+            var subscriptionForThisUsers = await _SubscriptionDbService.GetByUser(userId);
+            if (subscriptionForThisUsers.Count == 0)
+                return 0; 
+            var user = await this.GetUser(userId);
+
+            return  this._SubscriptionDbService.UpdateUserInformation(userId, user.Code, user.Name);
         }
 
         /// <summary>
