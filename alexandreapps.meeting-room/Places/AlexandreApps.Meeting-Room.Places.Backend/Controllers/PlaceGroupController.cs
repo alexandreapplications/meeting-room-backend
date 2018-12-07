@@ -53,7 +53,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPut("update")]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> Update([FromBody] PlaceGroupViewModel record)
         {
             if (!ModelState.IsValid)
@@ -95,7 +95,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Success</returns>
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             if (!ModelState.IsValid)
@@ -126,7 +126,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
         /// </summary>
         /// <param name="id">Record Id</param>
         /// <returns>Selected record</returns>
-        [HttpPost("get/{id}")]
+        [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)

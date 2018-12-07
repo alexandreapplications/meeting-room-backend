@@ -53,7 +53,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Inserted record</returns>
-        [HttpPut("update")]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> Update([FromBody] PlaceViewModel record)
         {
             if (!ModelState.IsValid)
@@ -77,36 +77,12 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
             }
         }
 
-        private PlaceViewModel ModelToView(PlaceModel model)
-        {
-            return new PlaceViewModel
-            {
-                Id = model.Id,
-                Code = model.Code,
-                Name = model.Name,
-                SubscriberId = model.SubscriberId,
-                Group = new PlaceGroupViewModel
-                {
-                    Id = model.Group.Id,
-                    Code = model.Group.Code,
-                    Building = model.Group.Building,
-                    Enabled = model.Group.Enabled,
-                    Name = model.Group.Name,
-                    SubscriberId = model.Group.SubscriberId
-                },
-                Infrastructure = model.Infrastructure,
-                LocationDescription = model.LocationDescription,
-                MaxUsers = model.MaxUsers,
-                OptionalInfrastructure = model.OptionalInfrastructure
-            };
-        }
-
         /// <summary>
         /// Deletes a record
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Success</returns>
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             if (!ModelState.IsValid)
@@ -137,7 +113,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
         /// </summary>
         /// <param name="id">Record Id</param>
         /// <returns>Selected record</returns>
-        [HttpPost("get/{id}")]
+        [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
@@ -202,13 +178,9 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
                 Code = model.Code,
                 Name = model.Name,
                 SubscriberId = model.SubscriberId,
-                Group = new PlaceGroupModel {
-                    Id = model.Group.Id,
-                    Code = model.Group.Code,
-                    Building =model.Group.Building,
-                    Enabled = model.Group.Enabled,
-                    Name = model.Group.Name,
-                    SubscriberId = model.Group.SubscriberId
+                PlaceGroup = new PlaceGroupModel
+                {
+                    Id = model.PlaceGroupId
                 },
                 Infrastructure = model.Infrastructure,
                 LocationDescription = model.LocationDescription,
@@ -216,5 +188,32 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
                 OptionalInfrastructure = model.OptionalInfrastructure
             };
         }
+
+
+        private PlaceViewModel ModelToView(PlaceModel model)
+        {
+            return new PlaceViewModel
+            {
+                Id = model.Id,
+                Code = model.Code,
+                Name = model.Name,
+                SubscriberId = model.SubscriberId,
+                PlaceGroupId = model.PlaceGroup.Id,
+                Group = new PlaceGroupViewModel
+                {
+                    Id = model.PlaceGroup.Id,
+                    Code = model.PlaceGroup.Code,
+                    Name = model.PlaceGroup.Name,
+                    Enabled = model.PlaceGroup.Enabled,
+                    SubscriberId = model.PlaceGroup.SubscriberId,
+                    Building = model.PlaceGroup.Building
+                },
+                Infrastructure = model.Infrastructure,
+                LocationDescription = model.LocationDescription,
+                MaxUsers = model.MaxUsers,
+                OptionalInfrastructure = model.OptionalInfrastructure
+            };
+        }
+
     }
 }

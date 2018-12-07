@@ -22,13 +22,13 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Places
         /// </summary>
         public string Code { get; set; }
         /// <summary>
-        /// Building name
-        /// </summary>
-        public string Building { get; set; }
-        /// <summary>
         /// Place Name
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Building name
+        /// </summary>
+        public string Building { get; set; }
         /// <summary>
         /// Is enabled
         /// </summary>

@@ -42,6 +42,8 @@ namespace AlexandreApps.Meeting_Room.Places.Backend
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            Dependences.DependencyBuilder.Build(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +52,10 @@ namespace AlexandreApps.Meeting_Room.Places.Backend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
             }
 
             app.UseCors("OpenPolicy");

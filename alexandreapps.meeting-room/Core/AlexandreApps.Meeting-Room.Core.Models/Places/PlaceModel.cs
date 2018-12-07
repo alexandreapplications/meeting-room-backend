@@ -18,9 +18,9 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Places
         /// </summary>
         public Guid SubscriberId { get; set; }
         /// <summary>
-        /// Group
+        /// Place Group information
         /// </summary>
-        public PlaceGroupModel Group { get; set; }
+        public PlaceGroupModel PlaceGroup { get; set; }
         /// <summary>
         /// Code
         /// </summary>

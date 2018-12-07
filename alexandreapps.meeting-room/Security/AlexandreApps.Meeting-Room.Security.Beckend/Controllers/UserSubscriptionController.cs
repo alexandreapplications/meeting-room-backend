@@ -82,7 +82,7 @@ namespace AlexandreApps.Meeting_Room.Security.Beckend.Controllers
         /// </summary>
         /// <param name="record">Record</param>
         /// <returns>Success</returns>
-        [HttpDelete("delete")]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             if (!ModelState.IsValid)
