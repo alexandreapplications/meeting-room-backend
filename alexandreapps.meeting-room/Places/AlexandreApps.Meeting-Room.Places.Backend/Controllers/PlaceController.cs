@@ -123,7 +123,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
 
             try
             {
-                var result = await _AppService.Get(id);
+                var result = ModelToView(await _AppService.Get(id));
                 if (result == null)
                     return new NoContentResult();
 
@@ -154,7 +154,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
 
             try
             {
-                var result = await _AppService.GetListBySubscriber(id);
+                var result = (await _AppService.GetListBySubscriber(id)).Select(x => ModelToView(x));
                 if (result == null)
                     return new NoContentResult();
 
@@ -172,6 +172,10 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
 
         private PlaceModel ViewToModel(PlaceViewModel model)
         {
+            if (model == null)
+            {
+                return null;
+            }
             return new PlaceModel
             {
                 Id = model.Id,
@@ -192,6 +196,10 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
 
         private PlaceViewModel ModelToView(PlaceModel model)
         {
+            if (model == null)
+            {
+                return null;
+            }
             return new PlaceViewModel
             {
                 Id = model.Id,
@@ -199,7 +207,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Controllers
                 Name = model.Name,
                 SubscriberId = model.SubscriberId,
                 PlaceGroupId = model.PlaceGroup.Id,
-                Group = new PlaceGroupViewModel
+                PlaceGroup = new PlaceGroupViewModel
                 {
                     Id = model.PlaceGroup.Id,
                     Code = model.PlaceGroup.Code,

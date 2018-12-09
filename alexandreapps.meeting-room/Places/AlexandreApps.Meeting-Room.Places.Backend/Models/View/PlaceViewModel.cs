@@ -22,7 +22,7 @@ namespace AlexandreApps.Meeting_Room.Places.Backend.Models.View
         /// <summary>
         /// Group
         /// </summary>
-        public PlaceGroupViewModel Group { get; set; }
+        public PlaceGroupViewModel PlaceGroup { get; set; }
         /// <summary>
         /// Code
         /// </summary>
