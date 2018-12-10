@@ -6,14 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DbServices\" />
-    <Folder Include="Dependences\" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
+    <ProjectReference Include="..\AlexandreApps.Meeting-Room.Scheduling.Interfaces\AlexandreApps.Meeting-Room.Scheduling.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

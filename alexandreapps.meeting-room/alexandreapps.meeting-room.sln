@@ -40,7 +40,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Core.Utils", "Core\AlexandreApps.Meeting-Room.Core.Utils\AlexandreApps.Meeting-Room.Core.Utils.csproj", "{3480D18A-CB22-4731-BA3D-F4025E5A6CD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Places.Backend", "Places\AlexandreApps.Meeting-Room.Places.Backend\AlexandreApps.Meeting-Room.Places.Backend.csproj", "{AE218067-66D9-47AB-9E8C-5027BD8735B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexandreApps.Meeting-Room.Places.Backend", "Places\AlexandreApps.Meeting-Room.Places.Backend\AlexandreApps.Meeting-Room.Places.Backend.csproj", "{AE218067-66D9-47AB-9E8C-5027BD8735B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexandreApps.Meeting-Room.Scheduling.Backend", "Scheduling\AlexandreApps.Meeting-Room.Scheduling.Backend\AlexandreApps.Meeting-Room.Scheduling.Backend.csproj", "{9B91008D-267F-4D97-BB86-84043A8E4191}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +102,10 @@ Global
 		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE218067-66D9-47AB-9E8C-5027BD8735B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B91008D-267F-4D97-BB86-84043A8E4191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B91008D-267F-4D97-BB86-84043A8E4191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B91008D-267F-4D97-BB86-84043A8E4191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B91008D-267F-4D97-BB86-84043A8E4191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{F49A496A-4992-428F-A569-BE74D4EEFBD0} = {9C38A5A1-CFBC-4475-BACE-9BFD5F093D86}
 		{3480D18A-CB22-4731-BA3D-F4025E5A6CD4} = {FFF89C95-2592-450B-9482-43A079A8C358}
 		{AE218067-66D9-47AB-9E8C-5027BD8735B1} = {3566B969-C09E-4AD6-8B48-E2C61D09411A}
+		{9B91008D-267F-4D97-BB86-84043A8E4191} = {7038C746-F8FE-41E5-BE3F-1C900676904C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89DA2A79-12D2-46C1-9DF4-528534A8A3D5}

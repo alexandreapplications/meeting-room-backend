@@ -6,28 +6,29 @@ using System.Threading.Tasks;
 
 namespace AlexandreApps.Meeting_Room.Scheduling.Interfaces
 {
-    public interface IPlaceAvailabilityAppService
+    public interface IPlaceAvailabilityDbService
     {
         /// <summary>
-        /// Creates one or mor place availability
+        /// Creates a new Place groups
         /// </summary>
-        /// <param name="placeAvailabilities">Record</param>
-        /// <returns>Created records</returns>
-        Task Create(params PlaceAvailabilityModel[] placeAvailabilities);
+        /// <param name="models">Places to create</param>
+        /// <returns>Task</returns>
+        Task Create(PlaceAvailabilityModel[] models);
+
 
         /// <summary>
-        /// Update one or mor place availability
+        /// Updates a list of place groups
         /// </summary>
-        /// <param name="placeAvailabilities">Record</param>
-        /// <returns>Updated records</returns>
-        Task<PlaceAvailabilityModel[]> Update(params PlaceAvailabilityModel[] placeAvailabilities);
+        /// <param name="models">Places to Update</param>
+        /// <returns>Places information</returns>
+        Task<PlaceAvailabilityModel[]> Update(PlaceAvailabilityModel[] models);
 
         /// <summary>
         /// Delete a list of place groups
         /// </summary>
         /// <param name="models">Ids to delete</param>
         /// <returns>Places information</returns>
-        Task<long> Delete(params Guid[] ids);
+        Task<long> Delete(Guid[] ids);
 
         /// <summary>
         /// Get a place group by key
@@ -35,13 +36,12 @@ namespace AlexandreApps.Meeting_Room.Scheduling.Interfaces
         /// <param name="id">Places to get</param>
         /// <returns>Places information</returns>
         Task<PlaceAvailabilityModel> Get(Guid id);
-
         /// <summary>
         /// Get all avaliability of one place
         /// </summary>
         /// <param name="id">Availability Id</param>
         /// <returns>List of availabilities</returns>
-        Task<List<PlaceAvailabilityModel>> GetByPlace(int id);
+        Task<List<PlaceAvailabilityModel>> GetByPlace(Guid id);
 
         /// <summary>
         /// Get a place group by key

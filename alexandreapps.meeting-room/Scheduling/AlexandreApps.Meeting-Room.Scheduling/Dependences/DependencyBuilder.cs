@@ -23,7 +23,7 @@ namespace AlexandreApps.Meeting_Room.Scheduling.Dependences
             services = services ?? throw new ArgumentNullException(nameof(services));
 
             services.AddSingleton<IPlaceAvailabilityAppService, PlaceAvailabilityAppService>();
-            services.AddSingleton<IScheduleAppService, ScheduleAppService>();
+            // services.AddSingleton<IScheduleAppService, ScheduleAppService>();
         }
     }
 }

@@ -12,11 +12,12 @@ namespace AlexandreApps.Meeting_Room.Core.Models.Scheduling
         /// <summary>
         /// Place availability Id
         /// </summary>
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// Place Id
         /// </summary>
-        public int PlaceId { get; set; }
+        public Guid PlaceId { get; set; }
+        public Guid SubscriberId { get; set; }
         /// <summary>
         /// Indicates if it is a blocker that disable the scheduling for this place.
         /// </summary>

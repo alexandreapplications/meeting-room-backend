@@ -10,48 +10,44 @@ namespace AlexandreApps.Meeting_Room.Scheduling.AppServices
     /// <summary>
     /// Manages the place availability on application
     /// </summary>
-    public class PlaceAvailabilityAppService: IPlaceAvailabilityAppService
+    public class PlaceAvailabilityAppService : IPlaceAvailabilityAppService
     {
-        /// <summary>
-        /// Creates one or mor place availability
-        /// </summary>
-        /// <param name="placeAvailabilities">Record</param>
-        /// <returns>Created records</returns>
-        public async Task<PlaceAvailabilityModel[]> Create(PlaceAvailabilityModel[] placeAvailabilities)
+        private readonly IPlaceAvailabilityDbService _dbService;
+
+        public PlaceAvailabilityAppService(IPlaceAvailabilityDbService dbService)
         {
-            throw new NotImplementedException();
+            this._dbService = dbService;
         }
 
-        /// <summary>
-        /// Update one or mor place availability
-        /// </summary>
-        /// <param name="placeAvailabilities">Record</param>
-        /// <returns>Updated records</returns>
-        public async Task<PlaceAvailabilityModel[]> Update(PlaceAvailabilityModel[] placeAvailabilities)
+        public Task Create(params PlaceAvailabilityModel[] placeAvailabilities)
         {
-            throw new NotImplementedException();
-
+            return _dbService.Create(placeAvailabilities);
         }
 
-        /// <summary>
-        /// Get all avaliability of one place
-        /// </summary>
-        /// <param name="id">Availability Id</param>
-        /// <returns>List of availabilities</returns>
-        public async Task<PlaceAvailabilityModel[]> GetByPlace(int id)
+        public Task<PlaceAvailabilityModel[]> Update(params PlaceAvailabilityModel[] placeAvailabilities)
         {
-            throw new NotImplementedException();
+            return _dbService.Update(placeAvailabilities);
         }
 
-        /// <summary>
-        /// Get all availability by date
-        /// </summary>
-        /// <param name="date">Avaliability date</param>
-        /// <returns>List</returns>
-        public async Task<PlaceAvailabilityModel[]> GetListByDate(DateTime date)
+        public Task<long> Delete(params Guid[] ids)
         {
-            throw new NotImplementedException();
-
+            return _dbService.Delete(ids);
         }
+
+        public Task<PlaceAvailabilityModel> Get(Guid id)
+        {
+            return _dbService.Get(id);
+        }
+
+        public Task<List<PlaceAvailabilityModel>> GetByPlace(int id)
+        {
+            return _dbService.GetByPlace(id);
+        }
+
+        public Task<List<PlaceAvailabilityModel>> GetListBySubscriber(Guid id, DateTime? date)
+        {
+            return _dbService.GetListBySubscriber(id, date);
+        }
+
     }
 }
