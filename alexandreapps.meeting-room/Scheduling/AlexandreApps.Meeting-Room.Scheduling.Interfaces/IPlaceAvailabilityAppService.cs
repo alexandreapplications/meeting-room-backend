@@ -41,7 +41,7 @@ namespace AlexandreApps.Meeting_Room.Scheduling.Interfaces
         /// </summary>
         /// <param name="id">Availability Id</param>
         /// <returns>List of availabilities</returns>
-        Task<List<PlaceAvailabilityModel>> GetByPlace(int id);
+        Task<List<PlaceAvailabilityModel>> GetByPlace(Guid id);
 
         /// <summary>
         /// Get a place group by key

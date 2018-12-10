@@ -39,7 +39,7 @@ namespace AlexandreApps.Meeting_Room.Scheduling.AppServices
             return _dbService.Get(id);
         }
 
-        public Task<List<PlaceAvailabilityModel>> GetByPlace(int id)
+        public Task<List<PlaceAvailabilityModel>> GetByPlace(Guid id)
         {
             return _dbService.GetByPlace(id);
         }
